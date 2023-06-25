@@ -67,16 +67,18 @@ let NERDTreeAutoDeleteBuffer = 1 " Automatically delete the buffer of file delet
 " Show the statusline
 set laststatus=2
 
-" Statusline configuration
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+" Show commands you enter
+set showcmd
 
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    endif
-    return ''
-endfunction
+" Statusline configuration
+set statusline=\ " Separator
+set statusline+=%< " Where to truncate line if too long
+set statusline+=%F " Full path to the file in the buffer
+set statusline+=%h%m%r " Flags for help(h), modification(m) to file and readonly(r)
+set statusline+=\ %y " Filetype
+set statusline+=%= " Switch side
+set statusline+=%-14.(%l:%c%V)\ %P " Line number:column number/virtual column number and percentage of file scrolled
+set statusline+=\ 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
@@ -147,8 +149,10 @@ set showmatch
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Enable syntax highlighting (remember to check the of statement!!)
-syntax enable
+" Enable syntax highlighting
+if has('syntax')
+    syntax enable
+endif
 
 " Set colorscheme and background
 try
@@ -168,8 +172,9 @@ set expandtab
 " Uses tabs according to situation
 set smarttab
 
-" One tab shifts 4 spaces
+" One tab shifts 4 spaces and indents rounded to shiftwidth
 set shiftwidth=4
+set shiftround
 set tabstop=4
 
 " Linebreak after 300 characters nonstop
