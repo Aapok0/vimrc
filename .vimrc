@@ -67,17 +67,15 @@ let NERDTreeAutoDeleteBuffer = 1 " Automatically delete the buffer of file delet
 " Show the statusline
 set laststatus=2
 
-" Show commands you enter
-set showcmd
-
 " Statusline configuration
-set statusline=\ " Separator
+set statusline=\  " Separator
 set statusline+=%< " Where to truncate line if too long
 set statusline+=%F " Full path to the file in the buffer
-set statusline+=%h%m%r " Flags for help(h), modification(m) to file and readonly(r)
+set statusline+=\ %h%m%r " Flags for help(h), modification(m) to file and readonly(r)
 set statusline+=\ %y " Filetype
 set statusline+=%= " Switch side
-set statusline+=%-14.(%l:%c%V)\ %P " Line number:column number/virtual column number and percentage of file scrolled
+set statusline+=%l:%c%V " Line:column/virtual column (won't show if same as c) 
+set statusline+=\ \ \ \ \ \ \ %P " Percentage of file scrolled
 set statusline+=\ 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -149,7 +147,7 @@ set showmatch
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Enable syntax highlighting
+" Enable syntax highlighting (remember to check the of statement!!)
 if has('syntax')
     syntax enable
 endif
