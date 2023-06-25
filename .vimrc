@@ -67,6 +67,9 @@ let NERDTreeAutoDeleteBuffer = 1 " Automatically delete the buffer of file delet
 " Show the statusline
 set laststatus=2
 
+" Show commands you enter
+set showcmd
+
 " Statusline configuration
 set statusline=\  " Separator
 set statusline+=%< " Where to truncate line if too long
