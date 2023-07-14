@@ -1,31 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GENERAL
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Don't try to be vi compatible
-set nocompatible
-
-" Disable modelines, when not in use (reads x lines from head/tail of file)
-set modelines=0
-
-" Make sure to have utf8 standard encoding
-set encoding=utf8
-
-" Use Unix as the standard file type
-set fileformats=unix,dos
-
-" Automatically reads any changes made to the current open file by someone else
-set autoread
-
-" Hide buffer messages = you can have unsaved changes, when opening more files
-set hidden
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Disable filetype before loading plugins (to load correctlyi, when turned back on)
+" Disable filetype before loading plugins (to load correctly, when turned back on)
 filetype off
 
 " Set the runtime path to include Vundle and initialize
@@ -59,6 +36,28 @@ filetype plugin indent on
 let NERDTreeShowHidden=1 " Show hidden dot files/directories
 let NERDTreeQuitOnOpen = 1 " Closes NERDtree when files is opened
 let NERDTreeAutoDeleteBuffer = 1 " Automatically delete the buffer of file deleted in NERDtree
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GENERAL
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Don't try to be vi compatible
+set nocompatible
+
+" Disable modelines, when not in use (reads x lines from head/tail of file)
+set modelines=0
+
+" Make sure to have utf8 standard encoding
+set encoding=utf8
+
+" Use Unix as the standard file type
+set fileformats=unix,dos
+
+" Automatically reads any changes made to the current open file by someone else
+set autoread
+
+" Hide buffer messages = you can have unsaved changes, when opening more files
+set hidden
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUSLINE
