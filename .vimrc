@@ -44,6 +44,9 @@ let NERDTreeAutoDeleteBuffer = 1 " Automatically delete the buffer of file delet
 " Don't try to be vi compatible
 set nocompatible
 
+" Mouse support enabled for all modes
+set mouse=a
+
 " Disable modelines, when not in use (reads x lines from head/tail of file)
 set modelines=0
 
@@ -85,7 +88,7 @@ set statusline+=\
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Change map leader - more key combinations
-let mapleader = ','
+let mapleader = ' '
 
 " Alias for exiting a mode
 inoremap jk <Esc>
@@ -106,11 +109,21 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Show line number
 set number
 
+" Draws signcolumn next to numbers
+set signcolumn=yes
+
+" Highlight the line your cursor is on
+set cursorline
+
 " Show column and line position
 set ruler
 
 " When scrolling up or down, keep cursor 10 lines from top or bottom
 set scrolloff=10
+
+" Split window right and below
+set splitright
+set splitbelow
 
 " Autocomplete commands by using tab - move between choices with tab and s-tab
 set wildmenu
@@ -144,15 +157,17 @@ set showmatch
 "set t_vb=
 "set tm=500
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Enable syntax highlighting (remember to check the of statement!!)
+" Enable syntax highlighting
 if has('syntax')
     syntax enable
 endif
+
+" Use 24-bit color
+set termguicolors
 
 " Set colorscheme and background
 try
@@ -178,12 +193,12 @@ set shiftround
 set tabstop=4
 set softtabstop=4
 
+" Smart auto indentation
+set smartindent
+
 " Linebreak after 300 characters nonstop
 set linebreak
 set textwidth=300
-
-" Smart auto indentation
-set smartindent
 
 " Wrap lines
 set wrap
