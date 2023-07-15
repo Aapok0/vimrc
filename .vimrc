@@ -176,6 +176,7 @@ set smarttab
 set shiftwidth=4
 set shiftround
 set tabstop=4
+set softtabstop=4
 
 " Linebreak after 300 characters nonstop
 set linebreak
