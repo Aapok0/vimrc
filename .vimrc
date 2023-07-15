@@ -182,8 +182,8 @@ set softtabstop=4
 set linebreak
 set textwidth=300
 
-" Auto indentation
-set autoindent
+" Smart auto indentation
+set smartindent
 
 " Wrap lines
 set wrap
