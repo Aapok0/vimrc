@@ -92,6 +92,11 @@ let mapleader = ' '
 
 " Alias for exiting a mode
 inoremap jk <Esc>
+vnoremap jk <Esc> 
+
+" Alias for yanking to and pasting from clipboard
+vnoremap <leader>y "+y
+vnoremap <leader>p "+p
 
 " Sudo save, when for example forgot to use sudo with root owned file
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
@@ -105,6 +110,13 @@ nnoremap <C-f> :NERDTreeFind<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " USABILITY
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable backup and swap
+set nobackup
+set noswapfile
+
+" Undofile -> persistent undo
+set undofile
+set undodir=~/.vim/undodir
 
 " Show line number
 set number
@@ -120,6 +132,9 @@ set ruler
 
 " When scrolling up or down, keep cursor 10 lines from top or bottom
 set scrolloff=10
+
+" When scrolling sideways (without wrap), keep cursor 10 lines from right or left
+set sidescrolloff=10
 
 " Split window right and below
 set splitright
